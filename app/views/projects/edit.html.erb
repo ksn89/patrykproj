@@ -1,0 +1,38 @@
+<h1>Add / Edit Project</h1>
+
+
+<%= render 'form' %>
+
+<div class="field">
+  <%= link_to "Add new member to Project", new_project_member_path(@project), :class => "btn btn-primary" %></br>
+  <b>Members:</b></br>
+
+  <% @project.members.each do |f| %>
+
+      <% if f.confirmed.nil? %>
+          <div class="nacc">
+            <ul>
+              <li><%= link_to f.member_name, edit_project_member_path(@project, f), {:style => 'color:RED;'} %>
+                <%= link_to "x", [@project, f], :method => :delete, data: {confirm: 'Are you sure?'} %>
+                </br>
+              </li>
+            </ul>
+          </div>
+      <% else %>
+          <div class="acc">
+            <ul>
+              <li><%= link_to f.member_name, edit_project_member_path(@project, f), {:style => 'color:GREEN;'} %>
+                <%= link_to "x", [@project, f], :method => :delete, data: {confirm: 'Are you sure?'} %>
+                </br>
+              </li>
+            </ul>
+          </div>
+      <% end %>
+  <% end %>
+  </br>
+
+
+</div>
+
+
+<%= link_to 'Cancel', projects_path, class: "btn btn-danger" %>

@@ -1,22 +1,25 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.1'
-
-# Use sqlite3 as the database for Active Record
+gem 'rails', '4.0.2'
+gem 'public_activity','1.4.1'
+# Use pg as the database for Active Record
 gem 'pg','0.17.0'
-
-gem 'devise','3.2.2'
-
-gem 'omniauth'
-
-gem 'protected_attributes'
-
+gem 'kaminari'
+gem 'simple_form'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
-
+gem 'rspec-rails'
+gem 'bootstrap-sass', '2.3.2.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+
+#dodane gemy
+
+gem 'devise','3.2.2'
+gem 'omniauth'
+gem 'protected_attributes'
+gem 'rails_12factor'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'

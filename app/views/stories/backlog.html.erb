@@ -1,0 +1,40 @@
+<h1>Backlog</h1>
+
+<%= render 'buttons' %>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Story type</th>
+    <th>Owner</th>
+    <th>Comments</th>
+    <th>Tasks</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+
+  <% @stories.each do |story| %>
+      <% if story.select == 'Backlog' && story.status == 'Unstarted' %>
+          <tr>
+            <td><%= link_to story.name, edit_project_story_path(story.project, story) %></td>
+            <td><%= story.status %></td>
+            <td><%= story.story_type %></td>
+            <td><%= story.owner %></td>
+            <td><%= story.comments.size %></td>
+            <td><%= story.tasks.size %></td>
+            <td><%= status_button(story) %></td>
+            <td><%= link_to 'x', [story.project, story], method: :delete %></td>
+          </tr>
+      <% end %>
+  <% end %>
+  </tbody>
+</table>
+

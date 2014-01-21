@@ -2184,9 +2184,151 @@
       <column name="viewowner" sqlType="name" length="2147483647" precision="0" nullable="true" jdbcType="12"/>
       <column name="definition" sqlType="text" length="2147483647" precision="0" nullable="true" jdbcType="12"/>
     </table>
+    <table name="activities" schema="public" catalog="devi_development" type="TABLE">
+      <column name="id" sqlType="serial" length="10" precision="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnYWN0aXZpdGllc19pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
+      <column name="trackable_id" sqlType="int4" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="trackable_type" sqlType="varchar" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="owner_id" sqlType="int4" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="owner_type" sqlType="varchar" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="key" sqlType="varchar" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="parameters" sqlType="text" length="2147483647" precision="0" nullable="true" jdbcType="12"/>
+      <column name="recipient_id" sqlType="int4" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="recipient_type" sqlType="varchar" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="timestamp" length="29" precision="6" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="timestamp" length="29" precision="6" nullable="true" jdbcType="93"/>
+      <primary-key name="activities_pkey" columns="id"/>
+      <index name="index_activities_on_owner_id_and_owner_type" unique="false" columns="owner_id,owner_type"/>
+      <index name="index_activities_on_recipient_id_and_recipient_type" unique="false" columns="recipient_id,recipient_type"/>
+      <index name="index_activities_on_trackable_id_and_trackable_type" unique="false" columns="trackable_id,trackable_type"/>
+    </table>
+    <table name="activities_id_seq" schema="public" catalog="devi_development" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" length="2147483647" precision="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" length="1" precision="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" length="1" precision="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="comments" schema="public" catalog="devi_development" type="TABLE">
+      <column name="id" sqlType="serial" length="10" precision="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnY29tbWVudHNfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
+      <column name="user_id" sqlType="int4" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="body" sqlType="text" length="2147483647" precision="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="timestamp" length="29" precision="6" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="timestamp" length="29" precision="6" nullable="true" jdbcType="93"/>
+      <column name="story_id" sqlType="int4" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <primary-key name="comments_pkey" columns="id"/>
+    </table>
+    <table name="comments_id_seq" schema="public" catalog="devi_development" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" length="2147483647" precision="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" length="1" precision="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" length="1" precision="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="members" schema="public" catalog="devi_development" type="TABLE">
+      <column name="id" sqlType="serial" length="10" precision="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnbWVtYmVyc19pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
+      <column name="project_id" sqlType="int4" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="member_name" sqlType="varchar" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="timestamp" length="29" precision="6" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="timestamp" length="29" precision="6" nullable="true" jdbcType="93"/>
+      <column name="email_member" sqlType="varchar" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="project_owner" sqlType="bool" length="1" precision="0" nullable="true" jdbcType="-7"/>
+      <column name="confirmation_token" sqlType="varchar" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="confirmed" sqlType="bool" length="1" precision="0" nullable="true" jdbcType="-7"/>
+      <primary-key name="members_pkey" columns="id"/>
+    </table>
+    <table name="members_id_seq" schema="public" catalog="devi_development" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" length="2147483647" precision="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" length="1" precision="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" length="1" precision="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="projects" schema="public" catalog="devi_development" type="TABLE">
+      <column name="id" sqlType="serial" length="10" precision="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgncHJvamVjdHNfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
+      <column name="name" sqlType="varchar" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="user_name" sqlType="varchar" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="timestamp" length="29" precision="6" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="timestamp" length="29" precision="6" nullable="true" jdbcType="93"/>
+      <primary-key name="projects_pkey" columns="id"/>
+    </table>
+    <table name="projects_id_seq" schema="public" catalog="devi_development" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" length="2147483647" precision="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" length="1" precision="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" length="1" precision="0" nullable="false" jdbcType="-7"/>
+    </table>
     <table name="schema_migrations" schema="public" catalog="devi_development" type="TABLE">
       <column name="version" sqlType="varchar" length="255" precision="0" nullable="false" jdbcType="12"/>
       <index name="unique_schema_migrations" unique="true" columns="version"/>
+    </table>
+    <table name="stories" schema="public" catalog="devi_development" type="TABLE">
+      <column name="id" sqlType="serial" length="10" precision="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnc3Rvcmllc19pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
+      <column name="name" sqlType="varchar" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="project_id" sqlType="int4" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="status" sqlType="varchar" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="description" sqlType="text" length="2147483647" precision="0" nullable="true" jdbcType="12"/>
+      <column name="story_type" sqlType="varchar" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="owner" sqlType="varchar" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="timestamp" length="29" precision="6" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="timestamp" length="29" precision="6" nullable="true" jdbcType="93"/>
+      <column name="select" sqlType="varchar" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="comments_count" sqlType="int4" length="10" precision="0" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="tasks_count" sqlType="int4" length="10" precision="0" nullable="true" jdbcType="4" def="MA=="/>
+      <primary-key name="stories_pkey" columns="id"/>
+    </table>
+    <table name="stories_id_seq" schema="public" catalog="devi_development" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" length="2147483647" precision="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" length="1" precision="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" length="1" precision="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="tasks" schema="public" catalog="devi_development" type="TABLE">
+      <column name="id" sqlType="serial" length="10" precision="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndGFza3NfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
+      <column name="user_id" sqlType="int4" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="task_field" sqlType="text" length="2147483647" precision="0" nullable="true" jdbcType="12"/>
+      <column name="story_id" sqlType="int4" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="created_at" sqlType="timestamp" length="29" precision="6" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="timestamp" length="29" precision="6" nullable="true" jdbcType="93"/>
+      <primary-key name="tasks_pkey" columns="id"/>
+    </table>
+    <table name="tasks_id_seq" schema="public" catalog="devi_development" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" length="2147483647" precision="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" length="1" precision="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" length="1" precision="0" nullable="false" jdbcType="-7"/>
     </table>
     <table name="users" schema="public" catalog="devi_development" type="TABLE">
       <column name="id" sqlType="serial" length="10" precision="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndXNlcnNfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
@@ -2211,6 +2353,7 @@
       <column name="created_at" sqlType="timestamp" length="29" precision="6" nullable="true" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" length="29" precision="6" nullable="true" jdbcType="93"/>
       <primary-key name="users_pkey" columns="id"/>
+      <index name="index_users_on_authentication_token" unique="true" columns="authentication_token"/>
       <index name="index_users_on_confirmation_token" unique="true" columns="confirmation_token"/>
       <index name="index_users_on_email" unique="true" columns="email"/>
       <index name="index_users_on_reset_password_token" unique="true" columns="reset_password_token"/>

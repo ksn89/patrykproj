@@ -1,0 +1,29 @@
+<h1>Editing story</h1>
+
+<%= render 'form' %>
+
+<div class="field">
+  <%= link_to "Add new Comment", new_story_comment_path(@story), :class => "btn btn-primary" %>
+  <br>
+</div>
+<h2>Comments</h2>
+<% @story.comments.each do |comment| %>
+    <p>User: <%= comment.user.email %></p>
+    <br>
+    <p>Comment: <%= comment.body %> </p>
+    <%= link_to "Delete", [@story, comment], :method => :delete %>
+    <hr>
+<% end %>
+<div class="field">
+  <%= link_to "Add new Task", new_story_task_path(@story), :class => "btn btn-warning" %>
+  <br>
+</div>
+<h2>Tasks</h2>
+<% @story.tasks.each do |task| %>
+    <p>User: <%= task.user.email %></p>
+    <br>
+    <p>Task: <%= task.task_field %> </p>
+    <%= link_to "Delete", [@story, task], :method => :delete %>
+    <hr>
+<% end %>
+<%= link_to 'Cancel', project_path(@project), :class => "btn btn-danger" %>

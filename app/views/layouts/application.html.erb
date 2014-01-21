@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Devi</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <title><p>Hello Bugzilla</p></title>
+  <%= stylesheet_link_tag "application", media: "all",
+                          "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
 <body>
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "sample app", '#', id: "logo" %>
+      <nav>
+        <% if current_user.present? %>
+            <ul class="nav pull-right">
+              <li><%= link_to "Projects", projects_path %></li>
+              <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+              <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+        <% else %>
+            <ul class="nav pull-right">
+              <li><%= link_to "Sign in/up", static_pages_help_path %></li>
+            </ul>
+        <% end %>
 
-<%= yield %>
-
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <% if notice.present? %>
+      <p class="notice"><%= notice %></p>
+  <% end %>
+  <% if alert.present? %>
+      <p class="alert"><%= alert %></p>
+  <% end %>
+  <%= yield %>
+</div>
 </body>
 </html>
