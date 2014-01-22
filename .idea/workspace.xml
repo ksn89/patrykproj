@@ -32,19 +32,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="development.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="development.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="46" selection-start="737" selection-end="737" vertical-scroll-proportion="0.0" vertical-offset="71" max-vertical-offset="630">
+            <state line="15" column="82" selection-start="677" selection-end="681" vertical-scroll-proportion="0.13646056" vertical-offset="161" max-vertical-offset="630">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="devise.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="devise.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/initializers/devise.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="36" selection-start="771" selection-end="771" vertical-scroll-proportion="0.42755345" vertical-offset="0" max-vertical-offset="3945">
+            <state line="17" column="25" selection-start="889" selection-end="889" vertical-scroll-proportion="-7.285714" vertical-offset="0" max-vertical-offset="3945">
               <folding />
             </state>
           </provider>
@@ -118,8 +118,8 @@
         <option value="$PROJECT_DIR$/app/controllers/confirmations_controller.rb" />
         <option value="$PROJECT_DIR$/config/environment.rb" />
         <option value="$PROJECT_DIR$/app/mailers/user_mailer.rb" />
-        <option value="$PROJECT_DIR$/config/environments/development.rb" />
         <option value="$PROJECT_DIR$/config/initializers/devise.rb" />
+        <option value="$PROJECT_DIR$/config/environments/development.rb" />
       </list>
     </option>
   </component>
@@ -725,16 +725,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
+    <entry file="file://$PROJECT_DIR$/config/initializers/devise.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="46" selection-start="737" selection-end="737" vertical-scroll-proportion="0.0" vertical-offset="71" max-vertical-offset="630">
+        <state line="17" column="25" selection-start="889" selection-end="889" vertical-scroll-proportion="-7.285714" vertical-offset="0" max-vertical-offset="3945">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/initializers/devise.rb">
+    <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="36" selection-start="771" selection-end="771" vertical-scroll-proportion="0.42755345" vertical-offset="0" max-vertical-offset="3945">
+        <state line="15" column="82" selection-start="677" selection-end="681" vertical-scroll-proportion="0.13646056" vertical-offset="161" max-vertical-offset="630">
           <folding />
         </state>
       </provider>
