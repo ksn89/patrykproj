@@ -79,7 +79,7 @@ class StoriesController < ApplicationController
 
   private
   def find_story
-    @project = Project.find(params[:id_project])
+    @project = Project.find(params[:id])
     @stories = @project.stories
   end
 

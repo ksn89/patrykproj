@@ -4,6 +4,7 @@ resources :activities
 
 resources :stories, only:[] do
  resources :comments, :tasks
+  get :icebox, :current, :backlog, :done, on: :member
 end
 
   resources :projects do
@@ -24,10 +25,6 @@ end
   root 'static_pages#help'
   match '/help', to: 'static_pages#help', via: 'get'
   get "projects/:id_project/members/:id/activate" => "members#activate", :as => "active_member"
-  get "projects/:id_project/icebox" => "stories#icebox", :as => "icebox"
-  get "projects/:id_project/backlog" => "stories#backlog", :as => "backlog"
-  get "projects/:id_project/current" => "stories#current", :as => "current"
-  get "projects/:id_project/done" => "stories#done", :as => "done"
 
 
   # Example of regular route:
