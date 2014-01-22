@@ -1,5 +1,5 @@
 Devi::Application.routes.draw do
-
+resources :users, only: [:index]
 resources :activities
 
 resources :stories, only:[] do
@@ -17,6 +17,7 @@ end
   devise_for :users, controllers: {confirmations: 'confirmations', passwords: 'passwords', }
   devise_scope :user do
     get '/help' => 'static_pages#help', as: 'confirmation_getting_started'
+
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
