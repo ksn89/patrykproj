@@ -35095,4 +35095,7 @@
       </prototype>
     </procedure>
   </data-source>
+  <data-source source="LOCAL" name="Rails devi: production" uuid="ea35ffc5-9063-4bee-905b-c09c34c5da72">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
 </component>

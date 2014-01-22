@@ -15,3 +15,12 @@ test:
   pool: 5
   username: postgres
   password: postgres
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: dntgn9c73tal
+  username: gvwtrcdorrxrea
+  password: BqhXlbXkJFFiS89x0ocsRd7KSe
+  host: ec2-23-21-243-117.compute-1.amazonaws.com
+  port: 5432

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3031952235">
+  <component name="DataSourceManagerImpl" format="xml" hash="890564463">
     <data-source source="LOCAL" name="Rails devi: development" uuid="9fa0dabf-c817-4167-b3d9-e001ddec31cc">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
@@ -15,6 +15,14 @@
       <jdbc-url>jdbc:postgresql://127.0.0.1/devi_test</jdbc-url>
       <user-name>postgres</user-name>
       <user-password>dfdadfc5dfd9dfdedfcddfd8dfcfdfd9</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails devi: production" uuid="ea35ffc5-9063-4bee-905b-c09c34c5da72">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ec2-23-21-243-117.compute-1.amazonaws.com:5432/dntgn9c73tal</jdbc-url>
+      <user-name>gvwtrcdorrxrea</user-name>
+      <user-password>dfe8dfdbdfc2dff2dfc6dfc8dff2dfc1dfe0dfecdfecdfc3dff9df92df93dfd2df9adfc5dfc9dfd9dff8dfcedf9ddfe1dff9dfcf</user-password>
       <libraries />
     </data-source>
   </component>
