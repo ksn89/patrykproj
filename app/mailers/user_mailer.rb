@@ -1,10 +1,10 @@
 class UserMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "lolek@o2.pl"
 
   def confirm_email(project, member, token)
     @member = member
     @project = project
-    @url = 'localhost:3000'+token
+    @url = project_member_path(@project,@member)+token
     mail(to: @member.email_member, subject: 'Welcome to My Awesome Site')
   end
 
