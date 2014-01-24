@@ -13,6 +13,8 @@ gem 'simple_form'
 gem 'bootstrap-sass', '2.3.2.0'
 group :test do
   gem 'rspec-rails', '2.14.1'
+  gem 'shoulda','3.5.0'
+  gem 'capybara','2.2.1'
 end
 gem 'devise', '3.2.2'
 gem 'omniauth', '1.2.1'

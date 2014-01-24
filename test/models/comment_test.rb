@@ -1,10 +1,10 @@
 require 'test_helper'
 
 class CommentTest < ActiveSupport::TestCase
-  test "comment attributes must not be empty" do
-    comment = Comment.new
-    assert comment.invalid?
-    assert comment.errors[:body].any?
-  end
+
+  should validate_presence_of(:body)
+  should belong_to(:user)
+  should belong_to(:story)
+  should ensure_length_of(:body).is_at_most(128)
 
 end

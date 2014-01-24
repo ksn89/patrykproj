@@ -1,14 +1,12 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:edit, :update, :destroy]
-
+  before_filter :find_story , :only => [:new, :create, :destroy]
   def new
-    @story = Story.find(params[:story_id])
     @comment = @story.comments.build
   end
 
 
   def create
-    @story = Story.find(params[:story_id])
     @comment = @story.comments.build(comment_params)
     @comment.user = current_user
     if @comment.save
@@ -35,7 +33,6 @@ class CommentsController < ApplicationController
 
 
   def destroy
-    @story = Story.find(params[:story_id])
     @comment.destroy
     @story.project.create_activity key: 'project.destroy_comment', owner: current_user
     redirect_to (:back)
@@ -43,6 +40,9 @@ class CommentsController < ApplicationController
   end
 
   private
+  def find_story
+    @story = Story.find(params[:story_id])
+  end
   # Use callbacks to share common setup or constraints between actions.
   def set_comment
     @comment = Comment.find(params[:id])

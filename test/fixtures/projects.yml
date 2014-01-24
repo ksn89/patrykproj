@@ -1,3 +1,8 @@
-ruby:
+Project1:
+  id: 1
   name: Programming
   user_name: ksn89@o2.pl
+Project2:
+  id: 2
+  name: Codding
+  user_name: ksn@gmail.com

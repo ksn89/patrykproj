@@ -7,4 +7,5 @@ class Task < ActiveRecord::Base
   belongs_to :story, :counter_cache => true
   belongs_to :user
   validates_presence_of :task_field
+  validates_length_of :task_field, maximum: 128
 end

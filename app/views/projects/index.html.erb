@@ -4,6 +4,7 @@
 
   <% @projects.each do |project| %>
       <div class="pull-left" id="pro">
+        <%= link_to edit_project_path(project) do %>
         <div class="well">
           <div class="caption">
             <p><%= link_to project.name, project_path(project), :class => "btn btn-warning" %></p>
@@ -23,6 +24,7 @@
           </div>
 
         </div>
+        <% end %>
       </div>
 
 

@@ -1,8 +1,9 @@
 Devi::Application.routes.draw do
 resources :users, only: [:index]
+
 resources :activities
 
-resources :stories, only:[] do
+resources :stories do
  resources :comments, :tasks
   get :icebox, :current, :backlog, :done, on: :member
 end
@@ -17,12 +18,8 @@ end
   devise_for :users, controllers: {confirmations: 'confirmations', passwords: 'passwords', }
   devise_scope :user do
     get '/help' => 'static_pages#help', as: 'confirmation_getting_started'
-
   end
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
   root 'static_pages#help'
   match '/help', to: 'static_pages#help', via: 'get'
   get "projects/:id_project/members/:id/activate" => "members#activate", :as => "active_member"

@@ -1,10 +1,10 @@
 require 'test_helper'
 
 class TaskTest < ActiveSupport::TestCase
-  test "task attributes must not be empty" do
-    task = Task.new
-    assert task.invalid?
-    assert task.errors[:task_field].any?
-  end
+
+  should validate_presence_of(:task_field)
+  should belong_to(:user)
+  should belong_to(:story)
+  should ensure_length_of(:task_field).is_at_most(128)
 
 end

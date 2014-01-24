@@ -13,4 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap
 //= require_tree .
+$("div.clickable").click(
+    function()
+    {
+        window.location = $(this).attr("http://www.google.pl");
+        return false;
+    });

@@ -2,26 +2,19 @@ class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :update, :destroy]
   before_filter :find_story, :only => [:done, :current, :icebox, :backlog, :index]
 
-
   def done
-
   end
 
   def current
-
   end
 
   def backlog
-
-
   end
 
   def icebox
-
   end
 
   def index
-
   end
 
   def show
